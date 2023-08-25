@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Find-Medicine</title>
+</head>
+
+<body>
+    {{>navbar data=details}}
+
+
+    {{>slider slides=slides}}
+
+    {{!-- services sections --}}
+    <section id="services_section" class="py-4">
+        <div class="container">
+            <h1 class="text-center text-secondary">Services that we provide</h1>
+            <div class="row mt-4">
+                {{!-- first sevices col --}}
+                {{#each services}}
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="containere text-center py-3">
+                                <i class="{{this.icon}} service_icon" aria-hidden="true"></i>
+                            </div>
+                            <h3 class="card-title">{{this.title}}</h3>
+                            <p>{{this.description}}</p>
+                            <a href="{{this.link}}">{{this.linkText}}</a>
+                            <a href="#" class="ml-4">Support</a>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+
+        </div>
+
+    </section>
+
+    {{!-- banner 2section --}}
+
+    <section class="banner2_section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center py-4">
+                    {{!-- left-side-banner --}}
+                    <h3>Hospital staff roles</h3>
+                    <p>There are many people who contribute to your care while you are in hospital. Numerous people and
+                        services work together to provide you with successful treatment in a hospital, from medical
+                        assessments and daily treatment to medication and catering.</p>
+                    <button type="button" class="btn btn-primary">Go to list of Staff</button>
+                </div>
+
+                <div class="col-md-6  text-center">
+                    {{!-- right-side-banner --}}
+                    <img src="/static/images/p2.jpeg" style="max-height: 350px;" class="img-fluid" alt="">
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    {{!-- banner 3 section --}}
+
+
+    <section class="banner2_section py-5">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-6  text-center">
+                    {{!-- left-side-banner --}}
+                    <img src="/static/images/p1.jpeg" style="max-height: 350px;" class="img-fluid" alt="">
+
+
+                </div>
+
+                <div class="col-md-6 text-center py-4 ">
+                    {{!-- right-side-banner --}}
+                    <h3>Hospital Information System</h3>
+                    <p>
+                        HMS was introduced to solve the complications coming from managing all the paper works of every
+                        patient associated with the various departments of hospitalization with confidentiality. HMS
+                        provides the ability to manage all the paperwork in one place, reducing the work of staff in
+                        arranging and analyzing the paperwork of the patients. HMS does many works like:</p>
+                    <button type="button" class="btn btn-primary">Go to Hospital Tools</button>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+
+
+    {{!-- contact us section --}}
+
+    <section id="contact_us" class="py-5  background1">
+        <div class="container">
+            <h2 class="text-center text-secondary">Contact Us</h2>
+            <div class="row">
+                <div class="col-md-12">
+
+
+                    <form action="/process-contact-form" method="post">
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Your Email address</label>
+                            <input name="email" type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp">
+                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Your Contact Number</label>
+                            <input name="phone" type="number" class="form-control" id="contactNumberField">
+                        </div>
+
+
+                        <div class="form-floating mt-4 mb-3">
+                            <textarea name="query" style="height: 210px;" class="form-control"
+                                placeholder="Enter your query here" id="queryField"></textarea>
+                            <label for="queryField">Your query</label>
+                        </div>
+
+                        <div class="container text-center">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+
+
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    {{!-- about-section --}}
+
+    <section id="about_section" class="about_section py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h2>About This Side</h2>
+                    <p class="py-3">Welcome to My Hospital, where we are committed to providing exceptional healthcare services
+                        to our community. With a focus on patient care, cutting-edge technology, and a dedicated team of
+                        medical professionals, we strive to make a positive impact on the lives of those we serve.</p>
+                    <p>At My Hospital, we take pride in our specialized departments and the expertise of our medical
+                        professionals. We offer a comprehensive array of specialties, including but not limited to
+                        cardiology, oncology, orthopedics, neurology, pediatrics, and obstetrics. Our skilled physicians
+                        stay at the forefront of medical advancements, enabling us to provide innovative treatments and
+                        personalized care tailored to each patient's unique needs.</p>
+                         <button type="submit" class="btn btn-primary btn-lg">Contact Us</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
